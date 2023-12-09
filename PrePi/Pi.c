@@ -44,7 +44,7 @@
 
 #ifndef _FB_ADDRESS_
 #define _FB_ADDRESS_
-#define FB_ADDR                 0x400000
+#define FB_ADDR                 0x3200000
 #endif
 
 #define FB_ADDR_REG             0xFD901E14
