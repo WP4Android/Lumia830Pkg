@@ -66,18 +66,12 @@ UartInit
     MmioWrite32(0xfd900718,0x00000001); 
 
     SerialPortInitialize();
-    DEBUG ((EFI_D_ERROR, "\nTianoCore on Nokia Lumia 830 (ARM)\n"));
+    DEBUG ((EFI_D_ERROR, "\nTianoCore on Samsung Galaxy S5 Mini (ARM)\n"));
     DEBUG ((EFI_D_ERROR,  "Firmware version %s built %a %a\n\n",
 	        (CHAR16*) PcdGetPtr(PcdFirmwareVersionString),
 			        __TIME__,
 				__DATE__
 	));
-
-  DEBUG((
-        EFI_D_INFO | EFI_D_LOAD,
-        "SRC0 at 0x%p\n",
-        MmioRead32(0xFD901EA4)
-  )); 
 }
 
 VOID
@@ -144,16 +138,6 @@ Main
       CpuDeadLoop();
     }
     DEBUG((EFI_D_INFO | EFI_D_LOAD, "GIC configured\n"));
-
-    DEBUG((
-        EFI_D_INFO | EFI_D_LOAD,
-        "SRC0_addrs 0= 0x%p, 1 = 0x%p, 2 = 0x%p, 3 = 0x%p\n 4 = 0x%p\n",
-        MmioRead32(0xFD901E14),
-        MmioRead32(0xFD902214),
-        MmioRead32(0xFD902A14),
-        MmioRead32(0xFD902E14),
-        MmioRead32(0xFD990008)
-  ));
 
   // Create the Stacks HOB (reserve the memory for all stacks)
 
